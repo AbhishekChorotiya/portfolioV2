@@ -1,3 +1,4 @@
+import { text } from "stream/consumers";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -13,6 +14,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        livvic: ["Livvic", "sans-serif"],
+        figtree: ["Figtree", "sans-serif"],
+      },
+      colors:{
+        background:'#F7F7FC',
+        tabBg:'#EDECF2',
+        textPrimary:'#231F20',
+        textSecondary:'#838D99'
+      },
+      boxShadow: {
+        profile: "0px 8px 24px 0px #1C192733"
+      }
     },
   },
   plugins: [],
