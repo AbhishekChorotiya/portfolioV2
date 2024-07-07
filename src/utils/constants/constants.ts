@@ -1,49 +1,59 @@
 export const SKILLS = [
     {
         name: "Next.js",
-        icon: "/nextjs.svg"
+        icon: "/nextjs.svg",
+        bg: true
     },
     {
         name: "React.js",
-        icon: "/reactjs.svg"
+        icon: "/reactjs.svg",
+        bg: false
     },
     {
         name: "JavaScript",
-        icon: "/js.svg"
+        icon: "/js.svg",
+        bg: false
     },
     {
         name: "TypeScript",
-        icon: "/ts.svg"
+        icon: "/ts.svg",
+        bg: false
     },
     {
         name: "Node.js",
-        icon: "/nodejs.svg"
+        icon: "/nodejs.svg",
+        bg: false
     },
     {
         name: "Tailwind",
-        icon: "/tailwind.svg"
+        icon: "/tailwind.svg",
+        bg: false
     },
     {
         name: "Git",
-        icon: "/git.svg"
+        icon: "/git.svg",
+        bg: false
     },
     {
         name: "GitHub",
-        icon: "/github.svg"
+        icon: "/github.svg",
+        bg: true
     },
     {
         name: "React Query",
-        icon: "/reactquery.svg"
+        icon: "/reactquery.svg",
+        bg: false
     },
     {
         name: "MongoDB",
-        icon: "/mongodb.svg"
+        icon: "/mongodb.svg",
+        bg: false
     },
     {
         name:"AWS",
-        icon:"/aws.svg"
+        icon:"/aws.svg",
+        bg: false
     },
-    
 ]
 
 export const SOCIALS = [

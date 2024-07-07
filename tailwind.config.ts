@@ -25,7 +25,8 @@ const config: Config = {
         textSecondary:'#838D99'
       },
       boxShadow: {
-        profile: "0px 8px 24px 0px #1C192733"
+        profile: "0px 8px 24px 0px #1C192733",
+        cardTop:'0px -2px 33px -7px #1C192733'
       }
     },
   },
