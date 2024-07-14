@@ -5,18 +5,28 @@ import { TextToSpeechClient } from "@google-cloud/text-to-speech";
 import fs from "fs";
 import path from "path";
 
-const base64Credentials = process.env
-  .GOOGLE_APPLICATION_CREDENTIALS_BASE64 as string;
-const credentials = Buffer.from(base64Credentials, "base64").toString("utf-8");
-const credentialsPath = path.join(process.cwd(), "tts.json");
-fs.writeFileSync(credentialsPath, credentials);
-
 export async function GET(request: NextRequest) {
   return NextResponse.json({ name: "Abhishek" });
 }
 
 export async function POST(request: NextRequest) {
   try {
+    const base64Credentials = process.env
+      .GOOGLE_APPLICATION_CREDENTIALS_BASE64 as string;
+    let credentialsPath: any = null;
+    if (base64Credentials) {
+      const credentials = Buffer.from(base64Credentials, "base64").toString(
+        "utf-8"
+      );
+      credentialsPath = path.join(process.cwd(), "tts.json");
+      fs.writeFileSync(credentialsPath, credentials);
+    } else {
+      console.error("base64Credentials is not defined");
+      return NextResponse.json({
+        error: "Error",
+      });
+    }
+
     const body = await request.json();
     const apiKey = process.env.TTS_KEY as string;
     const genAI = new GoogleGenerativeAI(apiKey);
