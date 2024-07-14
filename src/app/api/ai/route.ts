@@ -27,12 +27,15 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    console.log("working");
+
     const body = await request.json();
     const apiKey = process.env.TTS_KEY as string;
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash",
     });
+    console.log("working 2");
     const generationConfig = {
       temperature: 1,
       topP: 0.95,
@@ -43,6 +46,8 @@ export async function POST(request: NextRequest) {
     const chatSession = model.startChat({
       generationConfig,
     });
+
+    console.log("working 3");
 
     const prompt =
       "your name is Abhishek and you are you and you will answer in first person and you answer in simple way and you are the person who is answering not a AI model \n your personal data is \n " +
@@ -61,10 +66,13 @@ export async function POST(request: NextRequest) {
       body.question;
 
     const result = await chatSession?.sendMessage(prompt);
+    console.log("working 4");
 
     const client = new TextToSpeechClient({
       keyFilename: credentialsPath,
     });
+
+    console.log("working 5");
 
     const requestConfig = {
       input: { text: result?.response?.text() },
@@ -77,6 +85,7 @@ export async function POST(request: NextRequest) {
     };
     //@ts-ignore
     const [response] = await client?.synthesizeSpeech(requestConfig);
+    console.log("working 6");
 
     return NextResponse.json({
       result: result?.response?.text(),
