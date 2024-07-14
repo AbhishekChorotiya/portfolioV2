@@ -1,31 +1,21 @@
 import { SKILLS, SOCIALS } from "@/utils/constants/constants";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import BoundaryFade from "@/components/BoundaryFade";
 import ProfileSection from "@/components/ProfileSection";
-import {
-  ExternalLink,
-  Github,
-  Heart,
-  Instagram,
-  Link,
-  Linkedin,
-  Mail,
-  MessageSquareMore,
-  Phone,
-  Send,
-  SendHorizonal,
-  User,
-} from "lucide-react";
+import { ExternalLink, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import EmblaCarousel from "./Carausel";
 import { EmblaOptionsType } from "embla-carousel";
+import AiChat from "./AiChat";
+import Contact from "./Contact";
+import Navbar from "./Navbar";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 3;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-const landingPage = () => {
+const LandingPage = () => {
   return (
     <main className="flex relative lg:flex-row flex-col lg:h-screen w-screen bg-background lg:justify-center overflow-y-scroll lg:overflow-hidden">
       <ProfileSection />
@@ -41,7 +31,10 @@ const landingPage = () => {
           </section>
           <section className="flex flex-col w-full h-fit justify-center">
             <Heading title="Skills" />
-            <div className="relative lg:hidden flex gap-10 flex-col max-w-full my-5 overflow-hidden">
+            <div
+              id="skills"
+              className="relative lg:hidden flex gap-10 flex-col max-w-full my-5 overflow-hidden"
+            >
               <Marquee>
                 {SKILLS.slice(0, Math.floor(SKILLS.length / 2)).map(
                   (skill, i) => (
@@ -186,85 +179,28 @@ const landingPage = () => {
                     </h2> */}
                   </div>
                 </div>
-                <div className="w-full h-full gap-6 flex flex-col justify-center   border-textPrimary/80 p-6">
-                  <div className="w-full h-fit flex items-center border-b-2 border-textPrimary/80">
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <User className="w-6 h-6 text-textPrimary/80" />
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Enter Your Full Name"
-                      className="w-full h-full outline-none border-none ring-0 px-2 bg-transparent"
-                    />
-                  </div>
-                  <div className="w-full h-fit flex items-center border-b-2 border-textPrimary/80">
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-textPrimary/80" />
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Enter Your Email"
-                      className="w-full h-full outline-none border-none ring-0 px-2 bg-transparent"
-                    />
-                  </div>
-                  <div className="w-full h-[100px] flex  border-b-2 border-textPrimary/80">
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <MessageSquareMore className="w-[1.4rem] h-[1.4rem] text-textPrimary/80" />
-                    </div>
-                    <textarea
-                      placeholder="Type your message"
-                      className="w-full h-full resize-none pt-2.5 outline-none border-none ring-0 px-2 bg-transparent"
-                    />
-                  </div>
-                  <button className="w-12 flex items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80">
-                    <SendHorizonal className="w-6 h-6 text-textPrimary/80" />
-                  </button>
-                </div>
+                <Contact />
               </div>
             </div>
           </section>
-          <div className="min-w-full px-6 min-h-fit flex mt-5 mb-14 justify-center">
+          <div className="min-w-full flex-col px-6 min-h-fit flex mt-5 mb-20 justify-center">
             <p className="text-base text-balance text-center leading-6 tracking-wide font-livvic  text-textPrimary font-semibold">
-              Developed with ❤️ and the power of Next.js and Tailwind CSS, by
+              Developed with ❤️ and the magic of Next.js and Tailwind CSS, by
               yours truly.
+            </p>
+            <p className="text-sm text-balance text-center leading-6 tracking-wide font-livvic  text-textPrimary font-semibold">
+              Powered by Gemini and Vertex AI
             </p>
           </div>
         </div>
         <BoundaryFade dark width={"12%"} />
       </div>
+      <AiChat />
     </main>
   );
 };
 
-export default landingPage;
-
-const Navbar = () => {
-  return (
-    <header className="sticky z-50 bg-background lg:px-[20%] px-5  [scrollbar-width:none] font-semibold flex gap-5 text-textSecondary items-center mt-5 lg:mt-10 top-0 left-0 w-full min-h-16">
-      <span className="min-w-fit py-2 px-6 text-sm bg-tabBg rounded-full">
-        Home
-      </span>
-      <span className="min-w-fit py-2 px-6 text-sm bg-tabBg rounded-full">
-        About
-      </span>
-      <span className="min-w-fit py-2 px-6 text-sm bg-tabBg rounded-full">
-        Skills
-      </span>
-      <span className="min-w-fit py-2 px-6 text-sm bg-tabBg rounded-full">
-        Projects
-      </span>
-      <span className="min-w-fit py-2 px-6 text-sm bg-tabBg rounded-full">
-        Resume
-      </span>
-      <span className="min-w-fit relative overflow-hidden h-fit py-2 px-6 text-sm bg-textPrimary text-white rounded-full">
-        Hire Me!
-        <span className="shine-effect" />
-      </span>
-      <div className="absolute hidden lg:flex top-full min-h-12 w-full left-0 bg-gradient-to-b from-background to-transparent"></div>
-      <div className="absolute hidden lg:flex top-full min-h-12 w-full left-0 bg-gradient-to-b from-background to-transparent"></div>
-    </header>
-  );
-};
+export default LandingPage;
 
 const Heading = ({ title = "" }) => {
   return (

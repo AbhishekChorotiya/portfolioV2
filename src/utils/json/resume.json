@@ -1,0 +1,120 @@
+{
+  "personal_information": {
+    "name": "Abhishek Chorotiya",
+    "contact": "+91 8003132368",
+    "birthdate": "Oct 03, 2002",
+    "email": "2020kuec2033@iiitkota.ac.in",
+    "personal_email": "code.abhi8678@gmail.com",
+    "current_location": "Bangalore, India",
+    "home_address": "Nimaj, Rajasthan, India (306303)",
+    "online_profiles": {
+      "portfolio": "https://www.abhishekchorotiya.xyz/",
+      "linkedin": "https://www.linkedin.com/in/abhishek-chorotiya-7a1a0a222/",
+      "github": "https://github.com/AbhishekChorotiya",
+      "leetcode": "https://leetcode.com/u/Abhishek_Chorotiya/"
+    },
+    "parents": {
+      "father": "Mr. Nemichand Chorotiya",
+      "mother": "Sampati Devi"
+    }
+  },
+  "education": {
+    "institution": "Indian Institute of Information Technology Kota, Rajasthan",
+    "degree": "B.Tech in Electronics and Communication Engineering",
+    "gpa": "7.07",
+    "duration": "Nov 2020 – May 2024"
+  },
+  "technical_skills": {
+    "programming_languages": ["JavaScript", "TypeScript", "C++"],
+    "libraries_frameworks": [
+      "NextJS",
+      "ReactJS",
+      "ExpressJS",
+      "React Native",
+      "Tailwind",
+      "Bootstrap",
+      "Next-Auth"
+    ],
+    "tools_platforms": [
+      "Git",
+      "GitHub",
+      "Docker",
+      "VS Code",
+      "AWS (EC2, Amplify, Route53, LightSail)"
+    ],
+    "databases": ["MongoDB", "MySQL"],
+    "coursework": [
+      "Computer Networks",
+      "System Design",
+      "DSA",
+      "OOPS",
+      "DBMS",
+      "Operating System"
+    ]
+  },
+  "experience": [
+    {
+      "company": "OpenInApp (Listed Inc.)",
+      "location": "Bangalore, India",
+      "position": "Jr. Frontend Engineer",
+      "duration": "Feb 2024 – Present",
+      "responsibilities": [
+        "Developed Frontend for the Job-Board Product from Scratch",
+        "Developed Frontend for the My-Vibe Product from Scratch",
+        "Conducted code reviews and participated in team meetings to ensure code quality and project timelines",
+        "Fixed UI bugs and Optimized website’s performance to enhance user experience across different browsers and device",
+        "Utilizing tools like Goole Lighthouse for performance audits."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Classroom Attendance using WIFI",
+      "duration": "Aug 2023 – Nov 2033",
+      "technologies": [
+        "React Native",
+        "React",
+        "NodeJS",
+        "ExpressJS",
+        "MongoDB",
+        "JWT",
+        "Multer",
+        "xlsx"
+      ],
+      "description": "Facilitated faculty to take attendance of students using a mobile app, with admin functionality for course registration and student access to attendance records."
+    },
+    {
+      "name": "Chat Application",
+      "duration": "Jan 2022 – Mar 2022",
+      "technologies": ["NodeJS", "ExpressJS", "Web Sockets"],
+      "features": [
+        "Real-time location sharing",
+        "Messaging system with profanity filtering for safe communication."
+      ]
+    },
+    {
+      "name": "Silver Store (Ecommerce Website)",
+      "duration": "Jun 2022 – Aug 2022",
+      "technologies": [
+        "ReactJS",
+        "NodeJS",
+        "ExpressJS",
+        "Material UI",
+        "MongoDB",
+        "CSS Modules",
+        "JWT",
+        "Multer"
+      ],
+      "features": [
+        "Seamless product viewing and searching",
+        "Cart functionality",
+        "User profile management."
+      ]
+    }
+  ],
+  "achievements": [
+    "Ranked 5 out of 80+ teams in a Blockchain-based supply chain Ideathon organized by IIT Jodhpur and INEA-SERB.",
+    "Solved 600+ problems on Data Structures and Algorithms on platforms like Leetcode, GeeksforGeeks, Hackerrank."
+  ],
+  "languages": ["English", "Hindi", "Marwadi/Rajasthani"]
+}

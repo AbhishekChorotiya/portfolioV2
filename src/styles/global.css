@@ -7,6 +7,9 @@
     box-sizing: border-box;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 .embla {
     max-width: 50vw;
@@ -152,4 +155,33 @@
     --duration: 2.5s;
     --easing: linear;
     animation: var(--duration) var(--easing) infinite forwards shine-animation;
+  }
+
+  .animate-scale{
+    animation: scale 2s linear infinite;
+  }
+
+  @keyframes scale {
+    0%{
+      transform: scale(0.8);
+    }
+    50%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(0.8);
+    }
+  }
+
+  .animate-slide-in{
+    animation: slide-in 0.2s linear;
+  }
+
+  @keyframes slide-in {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0%);
+    }
   }

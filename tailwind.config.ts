@@ -18,16 +18,17 @@ const config: Config = {
         livvic: ["Livvic", "sans-serif"],
         figtree: ["Figtree", "sans-serif"],
       },
-      colors:{
-        background:'#F7F7FC',
-        tabBg:'#EDECF2',
-        textPrimary:'#231F20',
-        textSecondary:'#838D99'
+      colors: {
+        background: "#F7F7FC",
+        tabBg: "#EDECF2",
+        textPrimary: "#231F20",
+        textSecondary: "#838D99",
       },
       boxShadow: {
         profile: "0px 8px 24px 0px #1C192733",
-        cardTop:'0px -2px 33px -7px #1C192733'
-      }
+        cardTop: "0px -2px 33px -7px #1C192733",
+        aiBox: "-14px 1px 36px -8px rgba(0,0,0,0.2)",
+      },
     },
   },
   plugins: [],
