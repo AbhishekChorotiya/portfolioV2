@@ -8,7 +8,6 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import { NextButton, PrevButton, usePrevNextButtons } from "./ArrowButtons";
 import { DotButton, useDotButton } from "./DotButton";
-import BoundaryFade from "./BoundaryFade";
 import MockupImage from "./MockupImage";
 import Marquee from "react-fast-marquee";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
@@ -18,8 +17,17 @@ const TWEEN_FACTOR_BASE = 0.2;
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
+type slideObj = {
+  name: string;
+  images: string[];
+  description: string;
+  link?: string;
+  github?: string;
+  technologies: string[];
+};
+
 type PropType = {
-  slides: number[];
+  slides: slideObj[];
   options?: EmblaOptionsType;
 };
 
@@ -29,14 +37,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  const { selectedIndex } = useDotButton(emblaApi);
+  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -105,10 +107,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, tweenScale]);
 
   return (
-    <div className="embla min-w-full gap-6 flex flex-col items-center">
+    <div className="embla  min-w-full gap-6 flex flex-col items-center">
       <div className="embla__viewport  w-full min-h-fit" ref={emblaRef}>
-        <div className="embla__container w-full h-full">
-          {slides.map((index) => (
+        <div className="embla__container w-full  h-full">
+          {slides.map((data, index) => (
             <div
               className="embla__slide borderflex items-center justify-center text-textPrimary"
               key={index}
@@ -116,9 +118,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <div className="embla__slide__number border-x-2 flex flex-col border-textSecondary/20 min-w-full min-h-full">
                 <div className="w-full relative overflow-hidden">
                   <Marquee play={selectedIndex === index}>
-                    <MockupImage src="/mockup1.png" alt="nextjs" />
-                    <MockupImage src="/mockup2.png" alt="nextjs" />
-                    <MockupImage src="/mockup3.png" alt="nextjs" />
+                    {data?.images?.map((img, i) => (
+                      <MockupImage
+                        key={i}
+                        src={img || "/mockup1.png"}
+                        alt="project"
+                      />
+                    ))}
                   </Marquee>
                   {/* <BoundaryFade dark /> */}
                 </div>
@@ -126,21 +132,23 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   <div className="p-5 min-h-full flex flex-col ">
                     <div className="flex justify-between">
                       <h1 className="text-2xl  font-semibold text-textPrimary">
-                        CoDevTogether
+                        {data?.name}
                       </h1>
                       <div className="flex gap-5">
-                        <Github />
-                        <ExternalLink />
+                        {data?.github && <Github />}
+                        {data?.link && (
+                          <ExternalLink
+                            className="cursor-pointer"
+                            onClick={() => window.open(data?.link, "_blank")}
+                          />
+                        )}
                       </div>
                     </div>
                     <p className="text-textSecondary text-sm mt-2 w-[90%]">
-                      Create rooms to code, compile, chat, and track user
-                      activity in real-time. Perfect for seamless collaborative
-                      coding and discussions.
+                      {data?.description}
                     </p>
                     <pre className="text-textPrimary mt-5 text-sm font-semibold text-wrap">
-                      NextJS • ReactJS • Tailwind CSS • TypeScript • ReactQuery
-                      • Jotai
+                      {data?.technologies?.join(" • ")}
                     </pre>
                   </div>
                 </div>

@@ -13,29 +13,81 @@ import Navbar from "./Navbar";
 import { Toaster } from "react-hot-toast";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 3;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+const SLIDES = [
+  {
+    name: "CoDevTogether",
+    images: ["/codev1.png", "/codev2.png", "/codev3.png", "/codev4.png"],
+    description:
+      "Create rooms to code, compile, chat, and track user activity in real-time. Perfect for seamless collaborative coding and discussions.",
+    link: "https://codev.chorotiya.com/",
+    github: "https://github.com/AbhishekChorotiya/coDevTogether",
+    technologies: [
+      "ReactJS",
+      "Tailwind",
+      "Socket.io",
+      "NodeJS",
+      "Express",
+      "One Compiler",
+    ],
+  },
+  {
+    name: "AI Portfolio Website",
+    images: ["/p1.png", "/p2.png", "/p3.png", "/p4.png"],
+    description:
+      "Showcasing my projects, skills, social media profiles, and experience with a portfolio website deployed on Vercel. Incorporated AI chat and text-to-speech capabilities using Vertex AI and Google Gemini.",
+    link: "https://abhishek.chorotiya.com/",
+    github: "https://github.com/AbhishekChorotiya/portfolioV2",
+    technologies: [
+      "NextJS",
+      "Tailwind",
+      "AOS",
+      "Vercel",
+      "Gemini",
+      "Vertex AI",
+    ],
+  },
+  {
+    name: "Wifi Classromm Attendance System",
+    images: ["/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a5.png"],
+    description:
+      "Facilitated faculty to take attendance of students using a mobile app, with admin functionality for course registration and student access to attendance records.",
+    github: "https://github.com/AbhishekChorotiya/AttendanceApp",
+    technologies: [
+      "React Native",
+      "React",
+      "NodeJS",
+      "ExpressJS",
+      "MongoDB",
+      "JWT",
+      "Multer",
+      "xlsx",
+    ],
+  },
+];
 
 const LandingPage = () => {
   return (
     <main className="flex relative lg:flex-row flex-col lg:h-screen w-screen bg-background lg:justify-center overflow-y-scroll lg:overflow-hidden">
       <ProfileSection />
       <div className="w-full bg-background rounded-t-xl lg:rounded-none shadow-cardTop lg:shadow-none mt-[calc(100vh-7rem)] lg:mt-0 min-h-full flex flex-col relative [scrollbar-width:none] overflow-x-hidden">
-        <div className="w-full flex flex-col lg:overflow-y-scroll overflow-x-hidden">
+        <div className="w-full flex flex-col lg:overflow-y-scroll scroll-smooth overflow-x-hidden">
           <Navbar />
-          <section className="flex w-full h-fit justify-center px-8 lg:px-[16%]">
+          <section
+            id="about"
+            className="flex w-full h-fit justify-center px-8 lg:px-[16%]"
+          >
             <p className="text-center mt-10 mb-5 w-full text-sm text-balance font-livvic  text-textSecondary leading-6 tracking-wider font-semibold">
               {
                 "I'm Abhishek Chorotiya, a B.Tech graduate from IIIT Kota. Proficient in JavaScript, Next.js, React.js, and Node.js, with expertise in frontend and full-stack development. I'm passionate about technology and innovation, thriving on problem-solving and always eager to collaborate on exciting projects. Let's connect and explore opportunities in the ever-evolving tech world."
               }
             </p>
           </section>
-          <section className="flex flex-col w-full h-fit justify-center">
+          <section
+            id="skills"
+            className="flex flex-col w-full h-fit justify-center"
+          >
             <Heading title="Skills" />
-            <div
-              id="skills"
-              className="relative lg:hidden flex gap-10 flex-col max-w-full my-5 overflow-hidden"
-            >
+            <div className="relative lg:hidden flex gap-10 flex-col max-w-full my-5 overflow-hidden">
               <Marquee>
                 {SKILLS.slice(0, Math.floor(SKILLS.length / 2)).map(
                   (skill, i) => (
@@ -58,6 +110,14 @@ const LandingPage = () => {
                   />
                 ))}
               </Marquee>
+              <div
+                className="absolute flex lg:hidden z-50 top-0 left-0 min-h-full bg-gradient-to-r from-background  to-transparent"
+                style={{ minWidth: "10%" }}
+              />
+              <div
+                className="absolute flex lg:hidden z-50 top-0 right-0 min-h-full bg-gradient-to-l from-background  to-transparent"
+                style={{ minWidth: "10%" }}
+              />
             </div>
             <div className="relative hidden lg:flex gap-10 flex-col max-w-full my-5 overflow-y-hidden">
               <Marquee className="overflow-hidden">
@@ -72,7 +132,10 @@ const LandingPage = () => {
               </Marquee>
             </div>
           </section>
-          <section className="flex flex-col w-full h-fit justify-center">
+          <section
+            id="experience"
+            className="flex flex-col w-full h-fit justify-center"
+          >
             <Heading title="Experience" />
             <div className="flex w-full  relative">
               <div className="w-full h-full z-10 top-0 lg:px-[12%] px-6 left-0 gap-2 flex flex-col pb-10 pt-2 lg:py-10">
@@ -83,13 +146,18 @@ const LandingPage = () => {
                   <h1 className="text-xl text-textPrimary font-livvic  font-semibold">
                     Frontend Engineer
                   </h1>
-                  <h2 className="text-lg flex gap-2 items-center text-textPrimary font-livvic font-semibold">
+                  <a
+                    href="https://openinapp.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-lg flex gap-2 items-center text-textPrimary font-livvic font-semibold"
+                  >
                     OpeninApp | Listed Inc.
                     <ExternalLink
                       className="text-textPrimary h-4"
                       strokeWidth={2.5}
                     />
-                  </h2>
+                  </a>
                 </div>
                 <div className="flex flex-col my-3 text-textSecondary text-base w-full">
                   <h3>Developed Frontend for the Job-Board and Vibe Product</h3>
@@ -109,15 +177,18 @@ const LandingPage = () => {
               </div>
             </div>
           </section>
-          <section className="flex flex-col w-full mb-4 h-fit items-center relative justify-center">
+          <section
+            id="projects"
+            className="flex flex-col w-full mb-4 h-fit items-center relative justify-center"
+          >
             <Heading title="Projects" />
-            <div className="flex flex-col w-full pt-12">
+            <div className=" flex flex-col w-full pt-12">
               <EmblaCarousel slides={SLIDES} options={OPTIONS} />
             </div>
           </section>
           <section className="flex flex-col w-full h-fit justify-center mb-8">
             <Heading title="Education" />
-            <div className="flex flex-col h-fit lg:px-[12%] w-full">
+            <div className=" flex flex-col h-fit lg:px-[12%] w-full">
               <div className="w-full justify-center items-center flex lg:flex-row flex-col gap-8 h-full relative">
                 <div className="lg:h-full lg:w-auto w-28 aspect-square relative">
                   <Image
@@ -141,7 +212,7 @@ const LandingPage = () => {
           </section>
           <section className="flex flex-col w-full text-textPrimary h-fit justify-center mb-10">
             <Heading title="Get in touch" />
-            <div className="flex flex-col h-fit mt-5 px-6 lg:px-[12%] w-full">
+            <div className="flex  flex-col h-fit mt-5 px-6 lg:px-[12%] w-full">
               <div className="w-full flex flex-col lg:flex-row h-full ">
                 <div className="w-full gap-5 flex flex-col items-center h-full pt-2 lg:pt-10 p-6">
                   <h1 className="text-lg font-livvi text-center text-textPrimary font-semibold">

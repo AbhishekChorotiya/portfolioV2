@@ -4,11 +4,8 @@ import Image from "next/image";
 import React from "react";
 
 const MockupImage = ({ src = "/nextjs.svg", alt = "" }) => (
-  <div
-    onClick={() => alert(`hello ${alt}`)}
-    className="min-w-[300px] cursor-pointer min-h-[200px] mx-2 rounded-full relative"
-  >
-    <Image alt={alt} src={src} layout="fill" objectFit="contain" />
+  <div className={`cursor-pointer mx-6 relative`}>
+    <img alt={alt} src={src} className="object-contain max-h-52 w-fit" />
   </div>
 );
 

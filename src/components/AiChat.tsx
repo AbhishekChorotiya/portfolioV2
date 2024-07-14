@@ -281,9 +281,9 @@ const AiChat = () => {
                   className={`absolute right-2 top-2 ${!audioUrl && "hidden"}`}
                 >
                   {isAudioPlaying ? (
-                    <Pause className="w-6 h-6" />
+                    <Pause className="w-6 h-6 cursor-pointer" />
                   ) : (
-                    <Play className="w-6 h-6" />
+                    <Play className="w-6 h-6 cursor-pointer" />
                   )}
                 </div>
               </div>

@@ -60,13 +60,13 @@ export const SOCIALS = [
   {
     name: "LinkedIn",
     icon: "/linkedinn.svg",
-    link: "https://www.linkedin.com/in/abhishek-chorotiya-0b9b01223/",
+    link: "https://www.linkedin.com/in/abhishek-chorotiya-7a1a0a222/",
   },
 
   {
     name: "Github",
     icon: "/github.svg",
-    link: "https://github.com/abhishekchorotya",
+    link: "https://github.com/AbhishekChorotiya",
   },
   {
     name: "LeetCode",

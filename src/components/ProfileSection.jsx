@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import BoundaryFade from "@/components/BoundaryFade";
@@ -23,8 +24,11 @@ const ProfileSection = () => {
         </h2>
         <div className="w-full flex justify-center gap-5 flex-wrap">
           {SOCIALS.map((social, i) => (
-            <div
+            <a
               key={i}
+              href={social.link}
+              target="_blank"
+              rel="noreferrer"
               className={`min-w-10 relative overflow-hidden border-2 border-black/10 shadow-profile aspect-square rounded-full`}
             >
               <Image
@@ -33,14 +37,21 @@ const ProfileSection = () => {
                 className={`${social.name === "LinkedIn" && "scale-125"}`}
                 layout="fill"
               />
-            </div>
+            </a>
           ))}
         </div>
         <div className="w-full h-full flex-1 pt-10 gap-4 flex justify-center relative">
           <button className="h-fit px-5 border-2 text-sm border-textSecondary/20 py-2 rounded-full text-textSecondary">
             Resume
           </button>
-          <button className="px-5 h-fit border-2 text-sm border-textSecondary/20 py-2 rounded-full text-textSecondary">
+          <button
+            onClick={() => {
+              document?.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="px-5 h-fit border-2 text-sm border-textSecondary/20 py-2 rounded-full text-textSecondary"
+          >
             Hire Me!
           </button>
         </div>

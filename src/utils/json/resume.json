@@ -54,7 +54,7 @@
       "GitHub",
       "Docker",
       "VS Code",
-      "AWS (EC2, Amplify, Route53, LightSail)",
+      "AWS",
       "Vercel",
       "Google Cloud Platform"
     ],
@@ -88,12 +88,12 @@
       "name": "AI Portfolio website",
       "duration": "April 2024 – July 2024",
       "technologies": ["NextJS", "Tailwind", "Vercel", "Gemini", "Vertex AI"],
-      "description": "Portfolio website to showcase my projects, skills, socials and experience. Deployed on Vercel. Added AI chat and text to speech features using Vertex AI and Google Gemini."
+      "description": "Showcasing my projects, skills, social media profiles, and experience with a portfolio website deployed on Vercel. Incorporated AI chat and text-to-speech capabilities using Vertex AI and Google Gemini."
     },
     {
       "name": "CoDevTogether",
       "duration": "April 2024 – July 2024",
-      "technologies": ["ReactJS", "Tailwind", "socket.io"],
+      "technologies": ["ReactJS", "Tailwind", "socket.io", "NodeJS"],
       "description": "Create rooms to code, compile, chat, and track user activity in real-time. Perfect for seamless collaborative coding and discussions."
     },
     {
