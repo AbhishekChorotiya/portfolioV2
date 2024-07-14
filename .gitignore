@@ -2,6 +2,9 @@
 
 /tts.json
 
+.env
+.env.local
+
 # dependencies
 /node_modules
 /.pnp
