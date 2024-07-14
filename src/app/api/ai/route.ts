@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Resume from "@/utils/json/resume.json";
 import { TextToSpeechClient } from "@google-cloud/text-to-speech";
-import fs from "fs";
-import path from "path";
 
 export async function GET(request: NextRequest) {
   return NextResponse.json({ name: "Abhishek" });
@@ -13,27 +11,27 @@ export async function POST(request: NextRequest) {
   try {
     const base64Credentials = process.env
       .GOOGLE_APPLICATION_CREDENTIALS_BASE64 as string;
-    let credentialsPath: any = null;
-    if (base64Credentials) {
-      const credentials = Buffer.from(base64Credentials, "base64").toString(
-        "utf-8"
-      );
-      credentialsPath = path.join(process.cwd(), "tts.json");
-      fs.writeFileSync(credentialsPath, credentials);
-    } else {
-      console.error("base64Credentials is not defined");
-      throw new Error("base64Credentials is not defined");
+    if (!base64Credentials) {
+      console.error("GOOGLE_APPLICATION_CREDENTIALS_BASE64 is not defined");
+      throw new Error("GOOGLE_APPLICATION_CREDENTIALS_BASE64 is not defined");
     }
 
-    console.log("working");
+    const credentials = Buffer.from(base64Credentials, "base64").toString(
+      "utf-8"
+    );
 
     const body = await request.json();
     const apiKey = process.env.TTS_KEY as string;
+    if (!apiKey) {
+      console.error("TTS_KEY is not defined");
+      throw new Error("TTS_KEY is not defined");
+    }
+
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash",
     });
-    console.log("working 2");
+
     const generationConfig = {
       temperature: 1,
       topP: 0.95,
@@ -62,13 +60,10 @@ export async function POST(request: NextRequest) {
       body.question;
 
     const result = await chatSession?.sendMessage(prompt);
-    console.log("working 4");
 
     const client = new TextToSpeechClient({
-      keyFilename: credentialsPath,
+      credentials: JSON.parse(credentials),
     });
-
-    console.log("working 5");
 
     const requestConfig = {
       input: { text: result?.response?.text() },
@@ -79,9 +74,9 @@ export async function POST(request: NextRequest) {
       },
       audioConfig: { audioEncoding: "MP3" },
     };
+
     //@ts-ignore
     const [response] = await client?.synthesizeSpeech(requestConfig);
-    console.log("working 6");
 
     return NextResponse.json({
       result: result?.response?.text(),
