@@ -1,13 +1,26 @@
 "use client";
 import { Mail, MessageSquareMore, SendHorizonal, User } from "lucide-react";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSend = async () => {
+    setLoading(true);
+    if (!name || !email || !message) {
+      toast.error("Please Enter All Fields", {
+        id: "send",
+      });
+      setLoading(false);
+      return;
+    }
+    toast.loading("Sending...", {
+      id: "send",
+    });
     const res = await fetch("/api/mail", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
@@ -15,6 +28,19 @@ const Contact = () => {
         "Content-Type": "application/json",
       },
     });
+    if (res?.status === 200) {
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast.success("Email Sent. Thank You!", {
+        id: "send",
+      });
+    } else {
+      toast.error("Error Occurred. Try Again Later", {
+        id: "send",
+      });
+    }
+    setLoading(false);
   };
 
   return (
@@ -54,12 +80,14 @@ const Contact = () => {
           value={message}
         />
       </div>
-      <button
-        onClick={handleSend}
-        className="w-12 flex items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80"
-      >
-        <SendHorizonal className="w-6 h-6 text-textPrimary/80" />
-      </button>
+      {!loading && (
+        <button
+          onClick={handleSend}
+          className="w-12 flex items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80"
+        >
+          <SendHorizonal className="w-6 h-6 text-textPrimary/80" />
+        </button>
+      )}
     </div>
   );
 };

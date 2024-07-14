@@ -1,6 +1,6 @@
-import { SKILLS, SOCIALS } from "@/utils/constants/constants";
+import { SKILLS } from "@/utils/constants/constants";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React from "react";
 import Marquee from "react-fast-marquee";
 import BoundaryFade from "@/components/BoundaryFade";
 import ProfileSection from "@/components/ProfileSection";
@@ -10,6 +10,7 @@ import { EmblaOptionsType } from "embla-carousel";
 import AiChat from "./AiChat";
 import Contact from "./Contact";
 import Navbar from "./Navbar";
+import { Toaster } from "react-hot-toast";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 3;
@@ -106,15 +107,6 @@ const LandingPage = () => {
                   Jotai
                 </pre>
               </div>
-              {/* <div className="w-[450px] absolute z-10 top-0 right-[-4rem] h-full">
-                <Image
-                  alt="mockup"
-                  src={"/mockup1.png"}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div> */}
-              {/* <div className="w-[200%] h-full bg-blue-200/30 blur-lg -translate-y-28 absolute -left-32 self-center -rotate-[16deg] z-0" /> */}
             </div>
           </section>
           <section className="flex flex-col w-full mb-4 h-fit items-center relative justify-center">
@@ -174,9 +166,6 @@ const LandingPage = () => {
                       <Instagram className="w-5 h-5" />
                       <h2 className="font-semibold">@abhishekchorotiya</h2>
                     </div>
-                    {/* <h2 className="font-semibold mt-2">
-                      Current Location: Bangalore, India
-                    </h2> */}
                   </div>
                 </div>
                 <Contact />
@@ -196,6 +185,7 @@ const LandingPage = () => {
         <BoundaryFade dark width={"12%"} />
       </div>
       <AiChat />
+      <Toaster />
     </main>
   );
 };
@@ -217,7 +207,7 @@ const Heading = ({ title = "" }) => {
 const SkillImage = ({ src = "/nextjs.svg", alt = "", bg = false }) => (
   <div className="p-4">
     <div
-      className={`min-w-24 min-h-24 grayscale-[20%] opacity-90 hover:scale-110 transition-all duration-200 hover:opacity-100 hover:grayscale-0 mx-6 rounded-full relative ${
+      className={`min-w-20 min-h-20 lg:min-w-24 lg:min-h-24 grayscale-[20%] opacity-90 hover:scale-110 transition-all duration-200 hover:opacity-100 hover:grayscale-0 mx-6 rounded-full relative ${
         bg && "bg-[#F7F7FC]"
       }`}
     >
