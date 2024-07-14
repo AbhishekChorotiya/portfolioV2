@@ -22,9 +22,7 @@ export async function POST(request: NextRequest) {
       fs.writeFileSync(credentialsPath, credentials);
     } else {
       console.error("base64Credentials is not defined");
-      return NextResponse.json({
-        error: "Error",
-      });
+      throw new Error("base64Credentials is not defined");
     }
 
     console.log("working");
@@ -46,8 +44,6 @@ export async function POST(request: NextRequest) {
     const chatSession = model.startChat({
       generationConfig,
     });
-
-    console.log("working 3");
 
     const prompt =
       "your name is Abhishek and you are you and you will answer in first person and you answer in simple way and you are the person who is answering not a AI model \n your personal data is \n " +
@@ -93,9 +89,10 @@ export async function POST(request: NextRequest) {
       audio: response?.audioContent,
     });
   } catch (error) {
-    // @ts-ignore
+    console.error("Error:", error);
     return NextResponse.json({
-      result: "some error occured",
+      // @ts-ignore
+      result: error?.message || "Something went wrong",
       filePath: "/output.mp3",
       audio: "",
     });
