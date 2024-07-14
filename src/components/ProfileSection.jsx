@@ -41,9 +41,14 @@ const ProfileSection = () => {
           ))}
         </div>
         <div className="w-full h-full flex-1 pt-10 gap-4 flex justify-center relative">
-          <button className="h-fit px-5 border-2 text-sm border-textSecondary/20 py-2 rounded-full text-textSecondary">
+          <a
+            href="https://drive.google.com/file/d/1h150C_6F7fOyt3Sn8mF2Fn-8x1Tqkl5B/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="h-fit px-5 border-2 text-sm border-textSecondary/20 py-2 rounded-full text-textSecondary"
+          >
             Resume
-          </button>
+          </a>
           <button
             onClick={() => {
               document?.getElementById("contact")?.scrollIntoView({

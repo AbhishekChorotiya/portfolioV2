@@ -47,9 +47,14 @@ const Navbar = () => {
       >
         Projects
       </span>
-      <span className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-tabBg rounded-full">
+      <a
+        href="https://drive.google.com/file/d/1h150C_6F7fOyt3Sn8mF2Fn-8x1Tqkl5B/view?usp=sharing"
+        target="_blank"
+        rel="noreferrer"
+        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-tabBg rounded-full"
+      >
         Resume
-      </span>
+      </a>
       <span
         onClick={() => {
           document?.getElementById("contact")?.scrollIntoView({
