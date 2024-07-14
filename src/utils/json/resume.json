@@ -3,6 +3,9 @@
     "name": "Abhishek Chorotiya",
     "contact": "+91 8003132368",
     "birthdate": "Oct 03, 2002",
+    "gender": "Male",
+    "nationality": "Indian",
+    "Age": "21",
     "email": "2020kuec2033@iiitkota.ac.in",
     "personal_email": "code.abhi8678@gmail.com",
     "current_location": "Bangalore, India",
@@ -13,16 +16,27 @@
       "github": "https://github.com/AbhishekChorotiya",
       "leetcode": "https://leetcode.com/u/Abhishek_Chorotiya/"
     },
-    "parents": {
+    "family": {
       "father": "Mr. Nemichand Chorotiya",
-      "mother": "Sampati Devi"
+      "mother": "Mrs. Sampati Devi",
+      "elder_sister": "Swati Chorotiya",
+      "younger_sister": "Anju Chorotiya",
+      "younger_brother": "Akash Chorotiya"
     }
   },
   "education": {
-    "institution": "Indian Institute of Information Technology Kota, Rajasthan",
-    "degree": "B.Tech in Electronics and Communication Engineering",
-    "gpa": "7.07",
-    "duration": "Nov 2020 – May 2024"
+    "college": {
+      "institution": "Indian Institute of Information Technology Kota, Rajasthan",
+      "degree": "B.Tech in Electronics and Communication Engineering",
+      "gpa": "7.07",
+      "duration": "Nov 2020 – May 2024"
+    },
+    "high_school": {
+      "School": "Bhagat Singh Senior Secondary School, Jaitaran, Rajasthan",
+      "degree": "12th Standard",
+      "result": "89.40%",
+      "duration": "May 2018 – May 2019"
+    }
   },
   "technical_skills": {
     "programming_languages": ["JavaScript", "TypeScript", "C++"],
@@ -40,7 +54,9 @@
       "GitHub",
       "Docker",
       "VS Code",
-      "AWS (EC2, Amplify, Route53, LightSail)"
+      "AWS (EC2, Amplify, Route53, LightSail)",
+      "Vercel",
+      "Google Cloud Platform"
     ],
     "databases": ["MongoDB", "MySQL"],
     "coursework": [
@@ -68,6 +84,18 @@
     }
   ],
   "projects": [
+    {
+      "name": "AI Portfolio website",
+      "duration": "April 2024 – July 2024",
+      "technologies": ["NextJS", "Tailwind", "Vercel", "Gemini", "Vertex AI"],
+      "description": "Portfolio website to showcase my projects, skills, socials and experience. Deployed on Vercel. Added AI chat and text to speech features using Vertex AI and Google Gemini."
+    },
+    {
+      "name": "CoDevTogether",
+      "duration": "April 2024 – July 2024",
+      "technologies": ["ReactJS", "Tailwind", "socket.io"],
+      "description": "Create rooms to code, compile, chat, and track user activity in real-time. Perfect for seamless collaborative coding and discussions."
+    },
     {
       "name": "Classroom Attendance using WIFI",
       "duration": "Aug 2023 – Nov 2033",
@@ -116,5 +144,10 @@
     "Ranked 5 out of 80+ teams in a Blockchain-based supply chain Ideathon organized by IIT Jodhpur and INEA-SERB.",
     "Solved 600+ problems on Data Structures and Algorithms on platforms like Leetcode, GeeksforGeeks, Hackerrank."
   ],
-  "languages": ["English", "Hindi", "Marwadi/Rajasthani"]
+  "languages": ["English", "Hindi", "Marwadi/Rajasthani"],
+  "other": {
+    "favourite_singer": "KK (Krishnakumar Kunnath)",
+    "hobbies": "Coding, Listening to Music, Gaming",
+    "interests": "Coding, Web Development, leetcode"
+  }
 }
