@@ -322,7 +322,7 @@ const AiChat = () => {
               <Image
                 width={20}
                 height={20}
-                src={"/geminiStar.png"}
+                src={"/geminiStar.avif"}
                 className="animate-scale"
                 alt="ai"
               />

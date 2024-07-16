@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Abhishek Chorotiya",
     images: [
       {
-        url: "https://abhishek.chorotiya.com/photoCircle.png",
+        url: "https://abhishek.chorotiya.com/photoCircle.avif",
         width: 500,
         height: 500,
         alt: "abhishek",

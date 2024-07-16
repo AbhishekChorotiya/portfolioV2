@@ -17,7 +17,7 @@ const ProfileSection = () => {
           <Image
             loading="eager"
             alt="photo"
-            src={"/photoCircle.png"}
+            src={"/photoCircle.avif"}
             layout="fill"
           />
         </div>

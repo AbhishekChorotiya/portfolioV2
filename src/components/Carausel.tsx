@@ -121,7 +121,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     {data?.images?.map((img, i) => (
                       <MockupImage
                         key={i}
-                        src={img || "/mockup1.png"}
+                        src={img || "/mockup1.avif"}
                         alt="project"
                       />
                     ))}

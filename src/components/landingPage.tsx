@@ -16,7 +16,7 @@ const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDES = [
   {
     name: "CoDevTogether",
-    images: ["/codev1.png", "/codev2.png", "/codev3.png", "/codev4.png"],
+    images: ["/codev1.avif", "/codev2.avif", "/codev3.avif", "/codev4.avif"],
     description:
       "Create rooms to code, compile, chat, and track user activity in real-time. Perfect for seamless collaborative coding and discussions.",
     link: "https://codev.chorotiya.com/",
@@ -32,7 +32,7 @@ const SLIDES = [
   },
   {
     name: "AI Portfolio Website",
-    images: ["/p1.png", "/p2.png", "/p3.png", "/p4.png"],
+    images: ["/p1.avif", "/p2.avif", "/p3.avif", "/p4.avif"],
     description:
       "Showcasing my projects, skills, social media profiles, and experience with a portfolio website deployed on Vercel. Incorporated AI chat and text-to-speech capabilities using Vertex AI and Google Gemini.",
     link: "https://abhishek.chorotiya.com/",
@@ -48,7 +48,7 @@ const SLIDES = [
   },
   {
     name: "Wifi Classromm Attendance System",
-    images: ["/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a5.png"],
+    images: ["/a1.avif", "/a2.avif", "/a3.avif", "/a4.avif", "/a5.avif"],
     description:
       "Facilitated faculty to take attendance of students using a mobile app, with admin functionality for course registration and student access to attendance records.",
     github: "https://github.com/AbhishekChorotiya/AttendanceApp",
