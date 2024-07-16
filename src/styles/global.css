@@ -13,7 +13,6 @@
 .embla {
     max-width: 50vw;
     margin: auto;
-    /* --slide-spacing: 1rem; */
     --slide-size: 90%;
   }
 
@@ -103,32 +102,6 @@
   }
 
 
-  
-  .animate_spin{
-    animation: spin2 4s linear infinite;
-    background-color: brown;
-    opacity: 0.5;
-  }
-
-
-  @keyframes spin2 {
-    0%{
-      transform: rotate(0deg);
-    }
-    25%{
-      transform: rotate(90deg);
-    }
-    50%{
-      transform: rotate(180deg);
-    }
-    75%{
-      transform: rotate(270deg);
-    }
-    100%{
-      transform: rotate(360deg);
-    }
-
-  }
 
   @keyframes shine-animation {
     20%,
