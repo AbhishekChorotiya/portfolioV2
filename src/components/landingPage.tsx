@@ -200,7 +200,13 @@ const LandingPage = () => {
                 </div>
                 <div className="flex  lg:text-left text-center text-textPrimary text-balance flex-col">
                   <h1 className="text-xl font-semibold">
-                    Indian Institute of Information Technology, Kota
+                    <a
+                      href="https://www.iiitkota.ac.in"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Indian Institute of Information Technology, Kota
+                    </a>
                   </h1>
                   <h2 className="text-lg">
                     B.Tech | Electronics and Communication Engineering
@@ -219,24 +225,44 @@ const LandingPage = () => {
                     {"Let's Build Greatest Apps Together"}
                   </h1>
                   <div className="flex items-center lg:items-start flex-col gap-4">
-                    <div className="flex gap-4 items-center">
+                    <a
+                      href="https://wa.me/+918003132368"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex gap-4 items-center"
+                    >
                       <Phone className="w-5 h-5" />
                       <h2 className="font-semibold">+91 8003132368</h2>
-                    </div>
-                    <div className="flex gap-4 items-center">
+                    </a>
+                    <a
+                      href="mailto:code.abhi8678@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex gap-4 items-center"
+                    >
                       <Mail className="w-5 h-5" />
                       <h2 className="font-semibold">code.abhi8678@gmail.com</h2>
-                    </div>
-                    <div className="hidden lg:flex gap-4 items-center">
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/abhishek-chorotiya-7a1a0a222/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hidden lg:flex gap-4 items-center"
+                    >
                       <Linkedin className="w-5 h-5" />
                       <h2 className="font-semibold">
                         /abhishek-chorotiya-7a1a0a222
                       </h2>
-                    </div>
-                    <div className="hidden lg:flex gap-4 items-center">
+                    </a>
+                    <a
+                      href="https://www.instagram.com/abhishekchorotiya/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hidden lg:flex gap-4 items-center"
+                    >
                       <Instagram className="w-5 h-5" />
                       <h2 className="font-semibold">@abhishekchorotiya</h2>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 <Contact />

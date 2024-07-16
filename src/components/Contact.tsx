@@ -9,6 +9,11 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  function validateEmail(email: string) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+
   const handleSend = async () => {
     setLoading(true);
     if (!name || !email || !message) {
@@ -18,6 +23,15 @@ const Contact = () => {
       setLoading(false);
       return;
     }
+
+    if (validateEmail(email) === false) {
+      toast.error("Invalid Email", {
+        id: "send",
+      });
+      setLoading(false);
+      return;
+    }
+
     toast.loading("Sending...", {
       id: "send",
     });

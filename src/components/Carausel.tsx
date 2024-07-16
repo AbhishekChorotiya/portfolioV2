@@ -132,20 +132,24 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   <div className="p-5 min-h-full flex flex-col ">
                     <div className="flex justify-between">
                       <h1 className="text-2xl  font-semibold text-textPrimary">
-                        {data?.name}
+                        <a href={data?.link} target="_blank" rel="noreferrer">
+                          {data?.name}
+                        </a>
                       </h1>
                       <div className="flex gap-5">
                         {data?.github && (
-                          <Github
-                            className="cursor-pointer"
-                            onClick={() => window.open(data?.github, "_blank")}
-                          />
+                          <a
+                            href={data?.github}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Github className="cursor-pointer" />
+                          </a>
                         )}
                         {data?.link && (
-                          <ExternalLink
-                            className="cursor-pointer"
-                            onClick={() => window.open(data?.link, "_blank")}
-                          />
+                          <a href={data?.link} target="_blank" rel="noreferrer">
+                            <ExternalLink className="cursor-pointer" />
+                          </a>
                         )}
                       </div>
                     </div>
