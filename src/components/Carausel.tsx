@@ -135,7 +135,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                         {data?.name}
                       </h1>
                       <div className="flex gap-5">
-                        {data?.github && <Github />}
+                        {data?.github && (
+                          <Github
+                            className="cursor-pointer"
+                            onClick={() => window.open(data?.github, "_blank")}
+                          />
+                        )}
                         {data?.link && (
                           <ExternalLink
                             className="cursor-pointer"
