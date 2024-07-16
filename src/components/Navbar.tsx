@@ -11,7 +11,7 @@ const Navbar = () => {
             block: "center",
           });
         }}
-        className="cursor-pointer min-w-fit py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/60 rounded-full"
+        className="cursor-pointer min-w-fit py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/50 rounded-full"
       >
         About
       </span>
@@ -22,7 +22,7 @@ const Navbar = () => {
             block: "center",
           });
         }}
-        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/60 rounded-full"
+        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/50 rounded-full"
       >
         Skills
       </span>
@@ -33,7 +33,7 @@ const Navbar = () => {
             block: "center",
           });
         }}
-        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/60 rounded-full"
+        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/50 rounded-full"
       >
         Experience
       </span>
@@ -43,7 +43,7 @@ const Navbar = () => {
             behavior: "smooth",
           });
         }}
-        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/60 rounded-full"
+        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/50 rounded-full"
       >
         Projects
       </span>
@@ -51,7 +51,7 @@ const Navbar = () => {
         href="https://drive.google.com/file/d/1h150C_6F7fOyt3Sn8mF2Fn-8x1Tqkl5B/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
-        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/60 rounded-full"
+        className="min-w-fit cursor-pointer py-2 px-6 text-sm bg-textSecondary/20 text-textPrimary/50 rounded-full"
       >
         Resume
       </a>
