@@ -84,12 +84,12 @@ const Contact = () => {
         />
       </div>
       {!loading && (
-        <button
+        <div
           onClick={handleSend}
           className="w-12 flex items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80"
         >
           <SendHorizonal className="w-6 h-6 text-textPrimary/80" />
-        </button>
+        </div>
       )}
     </div>
   );

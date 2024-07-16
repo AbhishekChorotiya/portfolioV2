@@ -160,15 +160,15 @@ const LandingPage = () => {
                   </a>
                 </div>
                 <div className="flex flex-col my-3 text-textSecondary text-base w-full">
-                  <h3>Developed Frontend for the Job-Board and Vibe Product</h3>
-                  <h3>
+                  <p>Developed Frontend for the Job-Board and Vibe Product</p>
+                  <p>
                     Collaborated with UI/UI designers to translate wireframes
                     and mockups into interactive web pages
-                  </h3>
-                  <h3>
+                  </p>
+                  <p>
                     Fixed UI bugs and Optimized website’s performance to enhance
                     user experience across different browsers and devices.
-                  </h3>
+                  </p>
                 </div>
                 <pre className="text-textPrimary text-wrap text-sm font-semibold">
                   NextJS • ReactJS • Tailwind CSS • TypeScript • ReactQuery •
