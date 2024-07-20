@@ -6,7 +6,7 @@ import { SOCIALS } from "@/utils/constants/constants";
 
 const ProfileSection = () => {
   return (
-    <div className="w-full fixed top-0 left-0 lg:max-w-[450px] bg-background lg:flex min-h-dvh lg:relative">
+    <div className="w-full fixed top-0 left-0 lg:max-w-[450px] bg-background lg:flex h-dvh lg:z-[100000]">
       <div className="absolute  top-0 left-0 w-full h-1/2 ">
         <Image loading="eager" src="/bgGroup.svg" layout="fill" alt="bg" />
         <div className="absolute bottom-0 h-full w-full bg-gradient-to-t from-background" />
