@@ -209,9 +209,9 @@ const AiChat = () => {
         <>
           <div
             onClick={() => setShow(false)}
-            className="fixed  top-0 left-0 text-textPrimary w-screen h-screen overflow-hidden bg-black/30 z-[90]"
+            className="fixed  top-0 left-0 text-textPrimary w-screen h-screen overflow-hidden bg-black/30 z-[1000]"
           />
-          <div className="fixed animate-slide-in shadow-aiBox flex flex-col lg:w-[420px] w-[85vw] right-0 top-0 h-dvh bg-white/90 lg:bg-white/80 backdrop-blur-[5px] z-[100]">
+          <div className="fixed animate-slide-in shadow-aiBox flex flex-col lg:w-[420px] w-[85vw] right-0 top-0 h-dvh bg-white/90 lg:bg-white/80 backdrop-blur-[5px] z-[10000]">
             <div className="flex w-full items-center p-4 bg-tabBg/50 border-b border-textPrimary gap-4">
               <X
                 className="w-6 h-6 cursor-pointer text-textPrimary"
