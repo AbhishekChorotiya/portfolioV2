@@ -217,9 +217,7 @@ const AiChat = () => {
                 className="w-6 h-6 cursor-pointer text-textPrimary"
                 onClick={() => setShow(false)}
               />
-              <h1 className="text-xl font-semibold text-textPrimary">
-                Ask My AI
-              </h1>
+              <h1 className="text-xl font-semibold text-textPrimary">Ask AI</h1>
             </div>
             <div className="flex flex-col-reverse w-full h-full overflow-hidden">
               <div
