@@ -69,7 +69,7 @@ const LandingPage = () => {
   return (
     <main className="flex relative lg:pl-[450px] lg:flex-row flex-col w-screen bg-background lg:justify-center overflow-y-scroll lg:overflow-hidden">
       <ProfileSection />
-      <div className="w-full bg-background rounded-t-xl lg:rounded-none shadow-cardTop lg:shadow-none mt-[calc(100vh-7rem)] lg:mt-0 min-h-full flex flex-col relative [scrollbar-width:none] overflow-x-hidden">
+      <div className="w-full bg-background rounded-t-xl lg:h-dvh lg:rounded-none shadow-cardTop lg:shadow-none mt-[calc(100vh-7rem)] lg:mt-0 min-h-full flex flex-col relative [scrollbar-width:none] overflow-x-hidden">
         <div className="w-full flex flex-col lg:overflow-y-scroll scroll-smooth overflow-x-hidden">
           <Navbar />
           <section
