@@ -83,35 +83,49 @@ const AiChat = () => {
   const [audioUrl, setAudioUrl] = useState("");
   const audioRef = useRef<HTMLAudioElement>(null);
   const [autoPlay, setAutoPlay] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const askAI = async (speech = "") => {
-    setMessages((prev) => [
-      ...prev,
-      { user: "ai", message: "Loading...", time: Date.now() },
-    ]);
-    const res = await fetch("/api/ai", {
-      method: "POST",
-      body: JSON.stringify({
-        question: question || speech,
-        history: messages?.slice(-20),
-      }),
-    });
+    setLoading(true);
+    try {
+      setMessages((prev) => [
+        ...prev,
+        { user: "ai", message: "Loading...", time: Date.now() },
+      ]);
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        body: JSON.stringify({
+          question: question || speech,
+          history: messages?.slice(-20),
+        }),
+      });
 
-    const data = await res?.json();
+      const data = await res?.json();
 
-    const arrayBuffer = data?.audio?.data; // Assuming data.audio is an ArrayBuffer
-    const blob = new Blob([new Uint8Array(arrayBuffer)], { type: "audio/mp3" });
-    const audioUrl = URL.createObjectURL(blob);
-    setAudioUrl(audioUrl);
+      const arrayBuffer = data?.audio?.data; // Assuming data.audio is an ArrayBuffer
+      const blob = new Blob([new Uint8Array(arrayBuffer)], {
+        type: "audio/mp3",
+      });
+      const audioUrl = URL.createObjectURL(blob);
+      setAudioUrl(audioUrl);
 
-    setMessages((prev) => prev.slice(0, -1));
-    setMessages((prev) => [
-      ...prev,
-      { user: "ai", message: data?.result, time: Date.now() },
-    ]);
-
-    console.log(data);
-    console.log(typeof data?.audio);
+      setMessages((prev) => prev.slice(0, -1));
+      setMessages((prev) => [
+        ...prev,
+        { user: "ai", message: data?.result, time: Date.now() },
+      ]);
+    } catch (err) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          user: "ai",
+          message: "Something went wrong, please try again.",
+          time: Date.now(),
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -151,8 +165,8 @@ const AiChat = () => {
   };
 
   const getData = (data = "") => {
+    if (loading) return;
     if (!question && !data) return;
-    console.log("getting Data", data, question);
     setMessages((prev) => [
       ...prev,
       { user: "user", message: question || data, time: Date.now() },
@@ -292,6 +306,7 @@ const AiChat = () => {
                 controls
               />
               <button
+                disabled={loading}
                 onClick={() => {
                   getData();
                   setAutoPlay(false);

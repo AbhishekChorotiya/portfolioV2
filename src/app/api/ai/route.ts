@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
     const base64Credentials = process.env
       .GOOGLE_APPLICATION_CREDENTIALS_BASE64 as string;
     if (!base64Credentials) {
-      console.error("GOOGLE_APPLICATION_CREDENTIALS_BASE64 is not defined");
       throw new Error("GOOGLE_APPLICATION_CREDENTIALS_BASE64 is not defined");
     }
 
@@ -84,10 +83,9 @@ export async function POST(request: NextRequest) {
       audio: response?.audioContent,
     });
   } catch (error) {
-    console.error("Error:", error);
     return NextResponse.json({
       // @ts-ignore
-      result: error?.message || "Something went wrong",
+      result: "Something went wrong",
       filePath: "/output.mp3",
       audio: "",
     });
