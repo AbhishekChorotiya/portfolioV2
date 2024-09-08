@@ -100,7 +100,7 @@ const Contact = () => {
       {!loading && (
         <div
           onClick={handleSend}
-          className="w-12 flex items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80"
+          className="w-12 cursor-pointer flex hover:bg-tabBg items-center justify-center self-end rounded-full h-12 border- border-textPrimary/80"
         >
           <SendHorizonal className="w-6 h-6 text-textPrimary/80" />
         </div>
