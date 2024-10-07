@@ -19,7 +19,7 @@ const SLIDES = [
     images: ["/codev1.avif", "/codev2.avif", "/codev3.avif", "/codev4.avif"],
     description:
       "Create rooms to code, compile, chat, and track user activity in real-time. Perfect for seamless collaborative coding and discussions.",
-    link: "https://codev.chorotiya.com/",
+    link: "https://codevtogether-44id.onrender.com/",
     github: "https://github.com/AbhishekChorotiya/coDevTogether",
     technologies: [
       "ReactJS",
