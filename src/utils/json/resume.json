@@ -28,7 +28,7 @@
     "college": {
       "institution": "Indian Institute of Information Technology Kota, Rajasthan",
       "degree": "B.Tech in Electronics and Communication Engineering",
-      "gpa": "7.07",
+      "gpa": "7.16",
       "duration": "Nov 2020 – May 2024"
     },
     "high_school": {
@@ -39,7 +39,7 @@
     }
   },
   "technical_skills": {
-    "programming_languages": ["JavaScript", "TypeScript", "C++"],
+    "programming_languages": ["JavaScript", "TypeScript", "C++","Rescript"],
     "libraries_frameworks": [
       "NextJS",
       "ReactJS",
@@ -70,10 +70,19 @@
   },
   "experience": [
     {
+      "company": "JUSPAY",
+      "location": "Bangalore, India",
+      "position": "Product Engineer",
+      "duration": "November 2024 – Present",
+      "responsibilities": [
+        "Building Hyperswitch"
+      ]
+    },
+    {
       "company": "OpenInApp (Listed Inc.)",
       "location": "Bangalore, India",
       "position": "Jr. Frontend Engineer",
-      "duration": "Feb 2024 – Present",
+      "duration": "Feb 2024 – Oct 2024",
       "responsibilities": [
         "Developed Frontend for the Job-Board Product from Scratch",
         "Developed Frontend for the My-Vibe Product from Scratch",
