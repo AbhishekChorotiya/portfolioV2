@@ -70,8 +70,9 @@
   },
   "experience": [
     {
-      "company": "JUSPAY",
+      "company": "Juspay",
       "location": "Bangalore, India",
+      "department":"Hyperswitch",
       "position": "Product Engineer",
       "duration": "November 2024 – Present",
       "responsibilities": [

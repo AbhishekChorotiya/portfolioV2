@@ -76,7 +76,6 @@ export async function POST(request: NextRequest) {
 
     //@ts-ignore
     const [response] = await client?.synthesizeSpeech(requestConfig);
-    console.log(response);
 
     return NextResponse.json({
       result: result?.response?.text(),
