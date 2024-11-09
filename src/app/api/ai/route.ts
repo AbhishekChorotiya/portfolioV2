@@ -60,22 +60,23 @@ export async function POST(request: NextRequest) {
 
     const result = await chatSession?.sendMessage(prompt);
 
-    const client = new TextToSpeechClient({
-      credentials: JSON.parse(credentials),
-    });
+    // const client = new TextToSpeechClient({
+    //   credentials: JSON.parse(credentials),
+    // });
 
-    const requestConfig = {
-      input: { text: result?.response?.text() },
-      voice: {
-        languageCode: "hi-IN",
-        name: "hi-IN-Neural2-C",
-        ssmlGender: "MALE",
-      },
-      audioConfig: { audioEncoding: "MP3" },
-    };
+    // const requestConfig = {
+    //   input: { text: result?.response?.text() },
+    //   voice: {
+    //     languageCode: "hi-IN",
+    //     name: "hi-IN-Neural2-C",
+    //     ssmlGender: "MALE",
+    //   },
+    //   audioConfig: { audioEncoding: "MP3" },
+    // };
 
     //@ts-ignore
-    const [response] = await client?.synthesizeSpeech(requestConfig);
+    // const [response] = await client?.synthesizeSpeech(requestConfig);
+    const response = []
 
     return NextResponse.json({
       result: result?.response?.text(),
