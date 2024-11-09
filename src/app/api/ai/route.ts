@@ -76,12 +76,11 @@ export async function POST(request: NextRequest) {
 
     //@ts-ignore
     // const [response] = await client?.synthesizeSpeech(requestConfig);
-    const response = []
 
     return NextResponse.json({
       result: result?.response?.text(),
       filePath: "/output.mp3",
-      audio: response?.audioContent,
+      audio: null,
     });
   } catch (error) {
     return NextResponse.json({
